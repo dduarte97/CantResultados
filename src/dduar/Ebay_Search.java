@@ -1,16 +1,20 @@
 package dduar;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Ebay_Search {
 	
-	public String count(ChromeDriver driver) {
-		//Elemento de tipo texto con cantidad de resultados
-		WebElement products = driver.findElement(By.className("srp-controls__count-heading"));
-		String numberOfItems = products.getText();
-		
-		return numberOfItems;
+	private int numberOfItems;
+	private Boolean elementExist;
+	
+	public int count(ChromeDriver driver) {
+		numberOfItems = 1;
+		elementExist = driver.findElements(By.id("srp-river-results-listing1")).size() > 0;
+		do {
+			numberOfItems++;
+			elementExist = driver.findElements(By.id("srp-river-results-listing" + numberOfItems)).size() > 0;
+		}while(elementExist);
+		return numberOfItems - 1;
 	}
 }

@@ -9,7 +9,7 @@ public class Ebay_Home {
 	Ebay_Search searchResults = new Ebay_Search();
 
 	
-	public String search(ChromeDriver driver) {
+	public int search(ChromeDriver driver) {
 		//Barra de búsqueda
 		WebElement searchBar = driver.findElementById("gh-ac");
 		searchBar.sendKeys(product);
@@ -17,7 +17,7 @@ public class Ebay_Home {
 		WebElement searchButton = driver.findElementById("gh-btn");
 		searchButton.click();
 		//Obtengo texto que informa cantidad de resultados
-		String numberOfProducts = searchResults.count(driver);
+		int numberOfProducts = searchResults.count(driver);
 		
 		return numberOfProducts;
 	}
