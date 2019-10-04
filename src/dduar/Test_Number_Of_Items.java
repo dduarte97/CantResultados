@@ -10,7 +10,7 @@ public class Test_Number_Of_Items{
 		
 		Ebay_Home ebay = new Ebay_Home();
 		
-		//Abro chrome e ingreso a la página
+		//Ingreso a la página
 		driver.get(ebayUrl);
 		//Uso la barra de búsqueda y obtengo la cantidad de resultados
 		String numberOfProducts = ebay.search(driver);

@@ -10,13 +10,13 @@ public class Ebay_Home {
 
 	
 	public String search(ChromeDriver driver) {
-		
+		//Barra de búsqueda
 		WebElement searchBar = driver.findElementById("gh-ac");
 		searchBar.sendKeys(product);
-		
+		//Botón Buscar
 		WebElement searchButton = driver.findElementById("gh-btn");
 		searchButton.click();
-		
+		//Obtengo texto que informa cantidad de resultados
 		String numberOfProducts = searchResults.count(driver);
 		
 		return numberOfProducts;
