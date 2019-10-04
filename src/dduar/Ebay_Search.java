@@ -9,7 +9,7 @@ public class Ebay_Search {
 	private Boolean elementExist;
 	
 	public int count(ChromeDriver driver) {
-		numberOfItems = 1;
+		numberOfItems = 0;
 		elementExist = driver.findElements(By.id("srp-river-results-listing1")).size() > 0;
 		do {
 			numberOfItems++;
